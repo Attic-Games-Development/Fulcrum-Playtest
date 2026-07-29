@@ -1,0 +1,67 @@
+name: How it felt
+description: Nothing was broken, but something felt off, confusing, boring, or great.
+labels: ["card", "type:feel", "status:inbox"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the most valuable kind of report we get. Bugs are easy to
+        find; knowing that the resupply loop feels tedious is not.
+
+        Be blunt. "I got bored waiting" is a useful sentence.
+
+  - type: input
+    id: build
+    attributes:
+      label: Build ID
+      description: Shown in the bottom corner of the game screen.
+      placeholder: "e.g. preview-2026.07.29-1443"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: What part of the game is this about?
+      options:
+        - Strategic map and travel
+        - Giving orders to agents
+        - Tactical view and direct control
+        - Hunting, gathering, and food
+        - Building and crafting
+        - Inventory and equipment
+        - The overall pace of a session
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: observation
+    attributes:
+      label: What did you notice?
+      placeholder: >
+        Waiting for agents to walk back to camp for food felt like dead time.
+        I found myself staring at the screen with nothing to decide.
+    validations:
+      required: true
+
+  - type: textarea
+    id: moment
+    attributes:
+      label: When did you notice it?
+      description: Roughly where in the session, and what were you trying to do?
+      placeholder: About twenty minutes in, once I had three jobs running at once.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: valence
+    attributes:
+      label: Was this good or bad?
+      options:
+        - Bad — it made the session worse
+        - Confusing — I could not tell what was happening
+        - Neutral — just an observation
+        - Good — this worked well and should be kept
+    validations:
+      required: true

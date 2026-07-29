@@ -1,0 +1,48 @@
+name: I wish the game did...
+description: A feature, change, or addition you'd like to see.
+labels: ["card", "type:idea", "status:inbox", "human-gate"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas are welcome. Two honest notes about what happens next:
+
+        Ideas are read and considered, but they are **not** implemented
+        automatically the way bugs are. Fulcrum has a design document that
+        decides what the game is trying to be, and an idea has to fit it.
+        Expect a conversation rather than a yes or no.
+
+        The most useful ideas describe *the problem you hit*, not just the
+        solution you thought of. "I couldn't tell which agent was starving"
+        leads somewhere better than "add a starvation icon."
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What were you trying to do?
+      description: What was awkward, missing, or frustrating?
+      placeholder: >
+        I wanted to know at a glance which of my six agents needed food,
+        without clicking each one.
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to see?
+      placeholder: A food meter on each agent card in the roster.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: strength
+    attributes:
+      label: How much does this matter to you?
+      options:
+        - Just a thought
+        - Would be nice
+        - I keep running into this
+        - This is stopping me from enjoying the game
+    validations:
+      required: true
