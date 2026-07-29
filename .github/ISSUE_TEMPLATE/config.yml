@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Play the current build
+    url: https://attic-games-development.github.io/Fulcrum-Playtest/
+    about: Opens the prototype in your browser. Nothing to install.

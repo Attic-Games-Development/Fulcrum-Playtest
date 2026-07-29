@@ -1,0 +1,83 @@
+name: Something broke
+description: The game crashed, froze, or did something clearly wrong.
+labels: ["card", "type:defect", "status:inbox"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for playing. Describe what happened in your own words —
+        you don't need to know anything about how the game is built.
+
+  - type: input
+    id: build
+    attributes:
+      label: Build ID
+      description: >
+        Shown in the bottom corner of the game screen. Copy it exactly.
+        Without this we often can't tell which version broke.
+      placeholder: "e.g. preview-2026.07.29-1443"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      placeholder: The game froze when I told an agent to hunt a deer near the river.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead?
+      placeholder: I expected them to walk over and shoot it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: What were you doing right before?
+      description: >
+        A rough sequence is fine. This is the single most useful field —
+        a bug we can reproduce usually gets fixed the same day.
+      placeholder: |
+        1. Started a new game
+        2. Sent two agents to the forest tile north of camp
+        3. Right-clicked a deer and chose Hunt
+        4. Everything stopped responding
+    validations:
+      required: true
+
+  - type: dropdown
+    id: repeatable
+    attributes:
+      label: Does it happen every time?
+      options:
+        - I only saw it once
+        - It happens sometimes
+        - It happens every time
+        - I did not try again
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: How badly did it affect your session?
+      options:
+        - Minor — I kept playing
+        - Annoying — I worked around it
+        - Bad — I lost progress or had to restart
+        - Blocking — I could not keep playing at all
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots help a lot. Drag them straight into this box.
+    validations:
+      required: false
